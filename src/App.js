@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from "./navbar"
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
+  let component; 
+  if (window.location.pathname == "/") {
+    component =  <h1>This is the Home</h1>
+  }
+  else if (window.location.pathname == "/about") {
+    component =  <About />
+  }
+  else if (window.location.pathname == "/contact") {
+    component =  <Contact />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Navbar />
+    <div className="container">
+      {component}
     </div>
-  );
+    </>)
 }
 
 export default App;
