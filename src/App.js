@@ -6,13 +6,13 @@ import Contact from './pages/Contact';
 
 function App() {
   let component; 
-  if (window.location.pathname == "/") {
+  if (window.location.pathname === "/") {
     component =  <h1>This is the Home</h1>
   }
-  else if (window.location.pathname == "/about") {
+  else if (window.location.pathname === "/about") {
     component =  <About />
   }
-  else if (window.location.pathname == "/contact") {
+  else if (window.location.pathname === "/contact") {
     component =  <Contact />
   }
 
